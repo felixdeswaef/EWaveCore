@@ -1,0 +1,3 @@
+G:/Documents/Clionprojects/RaySim/cmake-build-debug/CMakeFiles/RaySim.dir
+G:/Documents/Clionprojects/RaySim/cmake-build-debug/CMakeFiles/edit_cache.dir
+G:/Documents/Clionprojects/RaySim/cmake-build-debug/CMakeFiles/rebuild_cache.dir
