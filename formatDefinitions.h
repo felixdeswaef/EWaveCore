@@ -172,8 +172,9 @@ class formatDefinitions {
 
     string startblock = std::string("RAYSIMSTORE.");
     string BlockCLRAYS = std::string("CL_RAY_REV1.");
-    string BlockANTENA = std::string("RAYSIMSTORE.");
-    string BlockROOM = std::string("RAYSIMSTORE.");
+    string BlockMETAROOM = std::string("METASTORE.");
+    string BlockFIELDND3D = std::string("FIELDMULTIDIM.");
+    string BlockEND = std::string("ENDRAYSIMSTORE.");
 
 
 
@@ -185,6 +186,8 @@ public:
 
     formatDefinitions(bool read, const char *filename);
     void store(CL_Rayinfo * , int);
+    void storeField(float * field, int dims, int size,int steps);
+    void storemeta(cl_float3 roomsize,cl_float3 antenaorigin,cl_float3 testvolorigin,cl_float3 testvolsize);
     void read(CL_Rayinfo * , int);
     void close();
 

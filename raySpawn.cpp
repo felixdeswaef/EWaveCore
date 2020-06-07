@@ -24,7 +24,7 @@ RAY *DebugSpawner(int count, float x, float y, float z, float xr, float yr, floa
         float xof =xr + (((i/sq)-(hsq))*offset); //generate ofset grid
         float yof =yr + (((i%sq)-(hsq))*offset);
 
-        cout << xof << " | " << yof << "\n";
+        //cout << xof << " | " << yof << "\n";
 
         tempray.Xdir = xof;
         tempray.Ydir = yof;
@@ -32,7 +32,7 @@ RAY *DebugSpawner(int count, float x, float y, float z, float xr, float yr, floa
         tempray.rayid = i;
 
         raystack[i]=tempray;
-        cout<<"rays x x"<<tempray.Xorigin<<" "<<tempray.Yorigin<<" "<<tempray.Zorigin<<" "<<tempray.Xdir<<" "<<tempray.Ydir<<" "<<tempray.Zdir<<"\n";
+        //cout<<"rays x x"<<tempray.Xorigin<<" "<<tempray.Yorigin<<" "<<tempray.Zorigin<<" "<<tempray.Xdir<<" "<<tempray.Ydir<<" "<<tempray.Zdir<<"\n";
     }
     return raystack;
 }

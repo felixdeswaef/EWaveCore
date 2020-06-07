@@ -5,23 +5,50 @@
 #ifndef RAYSIM_CLFUNC_H
 #define RAYSIM_CLFUNC_H
 
-
+#include <cmath>
 #include <library.h>
 #include "formatDefinitions.h"
 
 class CLFUNC {
     CLCNTXT CTXT;
     chartable chart1;
+    cl_kernel fibRayGen;
     cl_kernel FACEPREP;
     cl_kernel REFLECT;
     cl_kernel MAIN;
+    cl_kernel resND;
+    cl_kernel ASSOC;
     cl_kernel STORE;
     cl_kernel DEBUGSTORE;
 
-public: CLFUNC(bool = false);
+    //room data
+    float Xsize = 5.0f;
+    float Ysize = 5.0f;
+    float Zsize = 5.0f;
+
+    float simhz = 26000000;
+    //float simhz = 2000000000;
+
+    int resdc; //count per dimension
+    float resds; //size per dimension
+    float celsizeAct ;
+    int resd; //dimensions
+    int steps; //frames in time
+    float angleofset; //angle ofset
+    cl_float3 testcubeorigin,antennaorigin,polarisation ;
+
+
+
+public:
+    CLFUNC(bool = false);
 
     void setupAuto();
-    void runcolisions(RAY *,int );
+
+    void runcolisions(RAY *, int);
+
+    bool trymap( float wdim, size_t maxsize,int phasesteps);
+
+    bool meminfRAY(int rays);
 };
 
 

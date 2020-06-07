@@ -6,4 +6,4 @@
 #define RAYSIM_ENVSPAWN_H
 
 #endif //RAYSIM_ENVSPAWN_H
-cl_float4 ** gettrisstack();
+cl_float4 ** gettrisstack(float,float,float);

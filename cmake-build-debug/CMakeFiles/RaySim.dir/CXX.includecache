@@ -43,6 +43,8 @@ crt/host_defines.h
 G:/APPDATAIII/NVIDIA/CUDA/v102/include/crt/host_defines.h
 
 G:/Documents/Clionprojects/RaySim/CLFUNC.h
+cmath
+-
 library.h
 -
 formatDefinitions.h
