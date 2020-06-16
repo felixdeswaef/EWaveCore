@@ -4,18 +4,18 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "G:/Documents/Clionprojects/RaySim/CLFUNC.cpp" "G:/Documents/Clionprojects/RaySim/cmake-build-debug/CMakeFiles/RaySim.dir/CLFUNC.cpp.obj"
-  "G:/Documents/Clionprojects/RaySim/envSpawn.cpp" "G:/Documents/Clionprojects/RaySim/cmake-build-debug/CMakeFiles/RaySim.dir/envSpawn.cpp.obj"
-  "G:/Documents/Clionprojects/RaySim/formatDefinitions.cpp" "G:/Documents/Clionprojects/RaySim/cmake-build-debug/CMakeFiles/RaySim.dir/formatDefinitions.cpp.obj"
-  "G:/Documents/Clionprojects/RaySim/main.cpp" "G:/Documents/Clionprojects/RaySim/cmake-build-debug/CMakeFiles/RaySim.dir/main.cpp.obj"
-  "G:/Documents/Clionprojects/RaySim/raySpawn.cpp" "G:/Documents/Clionprojects/RaySim/cmake-build-debug/CMakeFiles/RaySim.dir/raySpawn.cpp.obj"
+  "C:/Users/felix/Documents/RAYSIM/CLFUNC.cpp" "C:/Users/felix/Documents/RAYSIM/cmake-build-debug/CMakeFiles/RaySim.dir/CLFUNC.cpp.obj"
+  "C:/Users/felix/Documents/RAYSIM/envSpawn.cpp" "C:/Users/felix/Documents/RAYSIM/cmake-build-debug/CMakeFiles/RaySim.dir/envSpawn.cpp.obj"
+  "C:/Users/felix/Documents/RAYSIM/formatDefinitions.cpp" "C:/Users/felix/Documents/RAYSIM/cmake-build-debug/CMakeFiles/RaySim.dir/formatDefinitions.cpp.obj"
+  "C:/Users/felix/Documents/RAYSIM/main.cpp" "C:/Users/felix/Documents/RAYSIM/cmake-build-debug/CMakeFiles/RaySim.dir/main.cpp.obj"
+  "C:/Users/felix/Documents/RAYSIM/raySpawn.cpp" "C:/Users/felix/Documents/RAYSIM/cmake-build-debug/CMakeFiles/RaySim.dir/raySpawn.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "G:/Documents/Clionprojects/clprojtmpl - Copy"
-  "G:/APPDATAIII/NVIDIA/CUDA/v102/include"
+  "C:/Users/felix/Documents/OpenCHell/cmake-build-debug/OCLHELPER"
+  "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.0/include"
   )
 
 # Targets to which this target links.

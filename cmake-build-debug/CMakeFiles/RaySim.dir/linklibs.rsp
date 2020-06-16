@@ -1,1 +1,1 @@
- -LG:/DOCUME~1/CLIONP~1/CLPROJ~2/CMAKE-~1/OCLHEL~1 -loclhelper G://APPDATAIII//NVIDIA//CUDA//v102//lib//x64//OpenCL.lib -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
+  -LC:/Users/felix/Documents/OpenCHell/cmake-build-debug/OCLHELPER/lib  -loclhelper "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.0//lib//x64//OpenCL.lib" -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

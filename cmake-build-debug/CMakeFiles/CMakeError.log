@@ -1,22 +1,20 @@
 Determining if the CL_VERSION_2_2 exist failed with the following output:
-Change Dir: G:/Documents/Clionprojects/RaySim/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/felix/Documents/RAYSIM/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):G:/APPDATAIII/MinGW/mingw64/bin/mingw32-make.exe cmTC_b68b9/fast && G:/APPDATAIII/MinGW/mingw64/bin/mingw32-make.exe -f CMakeFiles\cmTC_b68b9.dir\build.make CMakeFiles/cmTC_b68b9.dir/build
-mingw32-make.exe[1]: Entering directory 'G:/Documents/Clionprojects/RaySim/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_b68b9.dir/CheckSymbolExists.c.obj
-G:\APPDATAIII\MinGW\mingw64\bin\gcc.exe  @CMakeFiles/cmTC_b68b9.dir/includes_C.rsp  -o CMakeFiles\cmTC_b68b9.dir\CheckSymbolExists.c.obj   -c G:\Documents\Clionprojects\RaySim\cmake-build-debug\CMakeFiles\CMakeTmp\CheckSymbolExists.c
-G:\Documents\Clionprojects\RaySim\cmake-build-debug\CMakeFiles\CMakeTmp\CheckSymbolExists.c: In function 'main':
-G:\Documents\Clionprojects\RaySim\cmake-build-debug\CMakeFiles\CMakeTmp\CheckSymbolExists.c:8:19: error: 'CL_VERSION_2_2' undeclared (first use in this function); did you mean 'CL_VERSION_1_2'?
-   return ((int*)(&CL_VERSION_2_2))[argc];
-                   ^~~~~~~~~~~~~~
-                   CL_VERSION_1_2
-G:\Documents\Clionprojects\RaySim\cmake-build-debug\CMakeFiles\CMakeTmp\CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
-mingw32-make.exe[1]: *** [CMakeFiles\cmTC_b68b9.dir\build.make:66: CMakeFiles/cmTC_b68b9.dir/CheckSymbolExists.c.obj] Error 1
-mingw32-make.exe[1]: Leaving directory 'G:/Documents/Clionprojects/RaySim/cmake-build-debug/CMakeFiles/CMakeTmp'
-mingw32-make.exe: *** [Makefile:120: cmTC_b68b9/fast] Error 2
+Run Build Command(s):C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe cmTC_fee1c/fast && C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f CMakeFiles\cmTC_fee1c.dir\build.make CMakeFiles/cmTC_fee1c.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/felix/Documents/RAYSIM/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fee1c.dir/CheckSymbolExists.c.obj
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe  @CMakeFiles/cmTC_fee1c.dir/includes_C.rsp  -o CMakeFiles\cmTC_fee1c.dir\CheckSymbolExists.c.obj   -c C:\Users\felix\Documents\RAYSIM\cmake-build-debug\CMakeFiles\CMakeTmp\CheckSymbolExists.c
+C:\Users\felix\Documents\RAYSIM\cmake-build-debug\CMakeFiles\CMakeTmp\CheckSymbolExists.c:2:10: fatal error: G://APPDATAIII//NVIDIA//CUDA//v102//include///CL/cl.h: No such file or directory
+ #include <G://APPDATAIII//NVIDIA//CUDA//v102//include///CL/cl.h>
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+mingw32-make.exe[1]: *** [CMakeFiles\cmTC_fee1c.dir\build.make:66: CMakeFiles/cmTC_fee1c.dir/CheckSymbolExists.c.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'C:/Users/felix/Documents/RAYSIM/cmake-build-debug/CMakeFiles/CMakeTmp'
+mingw32-make.exe: *** [Makefile:120: cmTC_fee1c/fast] Error 2
 
 
-File G:/Documents/Clionprojects/RaySim/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File C:/Users/felix/Documents/RAYSIM/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <G://APPDATAIII//NVIDIA//CUDA//v102//include///CL/cl.h>
 
@@ -30,26 +28,23 @@ int main(int argc, char** argv)
   return 0;
 #endif
 }
-
 Determining if the CL_VERSION_2_1 exist failed with the following output:
-Change Dir: G:/Documents/Clionprojects/RaySim/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/felix/Documents/RAYSIM/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):G:/APPDATAIII/MinGW/mingw64/bin/mingw32-make.exe cmTC_65028/fast && G:/APPDATAIII/MinGW/mingw64/bin/mingw32-make.exe -f CMakeFiles\cmTC_65028.dir\build.make CMakeFiles/cmTC_65028.dir/build
-mingw32-make.exe[1]: Entering directory 'G:/Documents/Clionprojects/RaySim/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_65028.dir/CheckSymbolExists.c.obj
-G:\APPDATAIII\MinGW\mingw64\bin\gcc.exe  @CMakeFiles/cmTC_65028.dir/includes_C.rsp  -o CMakeFiles\cmTC_65028.dir\CheckSymbolExists.c.obj   -c G:\Documents\Clionprojects\RaySim\cmake-build-debug\CMakeFiles\CMakeTmp\CheckSymbolExists.c
-G:\Documents\Clionprojects\RaySim\cmake-build-debug\CMakeFiles\CMakeTmp\CheckSymbolExists.c: In function 'main':
-G:\Documents\Clionprojects\RaySim\cmake-build-debug\CMakeFiles\CMakeTmp\CheckSymbolExists.c:8:19: error: 'CL_VERSION_2_1' undeclared (first use in this function); did you mean 'CL_VERSION_1_1'?
-   return ((int*)(&CL_VERSION_2_1))[argc];
-                   ^~~~~~~~~~~~~~
-                   CL_VERSION_1_1
-G:\Documents\Clionprojects\RaySim\cmake-build-debug\CMakeFiles\CMakeTmp\CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
-mingw32-make.exe[1]: *** [CMakeFiles\cmTC_65028.dir\build.make:66: CMakeFiles/cmTC_65028.dir/CheckSymbolExists.c.obj] Error 1
-mingw32-make.exe[1]: Leaving directory 'G:/Documents/Clionprojects/RaySim/cmake-build-debug/CMakeFiles/CMakeTmp'
-mingw32-make.exe: *** [Makefile:120: cmTC_65028/fast] Error 2
+Run Build Command(s):C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe cmTC_1ed56/fast && C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f CMakeFiles\cmTC_1ed56.dir\build.make CMakeFiles/cmTC_1ed56.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/felix/Documents/RAYSIM/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1ed56.dir/CheckSymbolExists.c.obj
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe  @CMakeFiles/cmTC_1ed56.dir/includes_C.rsp  -o CMakeFiles\cmTC_1ed56.dir\CheckSymbolExists.c.obj   -c C:\Users\felix\Documents\RAYSIM\cmake-build-debug\CMakeFiles\CMakeTmp\CheckSymbolExists.c
+C:\Users\felix\Documents\RAYSIM\cmake-build-debug\CMakeFiles\CMakeTmp\CheckSymbolExists.c:2:10: fatal error: G://APPDATAIII//NVIDIA//CUDA//v102//include///CL/cl.h: No such file or directory
+ #include <G://APPDATAIII//NVIDIA//CUDA//v102//include///CL/cl.h>
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+mingw32-make.exe[1]: *** [CMakeFiles\cmTC_1ed56.dir\build.make:66: CMakeFiles/cmTC_1ed56.dir/CheckSymbolExists.c.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'C:/Users/felix/Documents/RAYSIM/cmake-build-debug/CMakeFiles/CMakeTmp'
+mingw32-make.exe: *** [Makefile:120: cmTC_1ed56/fast] Error 2
 
 
-File G:/Documents/Clionprojects/RaySim/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File C:/Users/felix/Documents/RAYSIM/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <G://APPDATAIII//NVIDIA//CUDA//v102//include///CL/cl.h>
 
@@ -63,26 +58,23 @@ int main(int argc, char** argv)
   return 0;
 #endif
 }
-
 Determining if the CL_VERSION_2_0 exist failed with the following output:
-Change Dir: G:/Documents/Clionprojects/RaySim/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/felix/Documents/RAYSIM/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):G:/APPDATAIII/MinGW/mingw64/bin/mingw32-make.exe cmTC_e1058/fast && G:/APPDATAIII/MinGW/mingw64/bin/mingw32-make.exe -f CMakeFiles\cmTC_e1058.dir\build.make CMakeFiles/cmTC_e1058.dir/build
-mingw32-make.exe[1]: Entering directory 'G:/Documents/Clionprojects/RaySim/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_e1058.dir/CheckSymbolExists.c.obj
-G:\APPDATAIII\MinGW\mingw64\bin\gcc.exe  @CMakeFiles/cmTC_e1058.dir/includes_C.rsp  -o CMakeFiles\cmTC_e1058.dir\CheckSymbolExists.c.obj   -c G:\Documents\Clionprojects\RaySim\cmake-build-debug\CMakeFiles\CMakeTmp\CheckSymbolExists.c
-G:\Documents\Clionprojects\RaySim\cmake-build-debug\CMakeFiles\CMakeTmp\CheckSymbolExists.c: In function 'main':
-G:\Documents\Clionprojects\RaySim\cmake-build-debug\CMakeFiles\CMakeTmp\CheckSymbolExists.c:8:19: error: 'CL_VERSION_2_0' undeclared (first use in this function); did you mean 'CL_VERSION_1_0'?
-   return ((int*)(&CL_VERSION_2_0))[argc];
-                   ^~~~~~~~~~~~~~
-                   CL_VERSION_1_0
-G:\Documents\Clionprojects\RaySim\cmake-build-debug\CMakeFiles\CMakeTmp\CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
-mingw32-make.exe[1]: *** [CMakeFiles\cmTC_e1058.dir\build.make:66: CMakeFiles/cmTC_e1058.dir/CheckSymbolExists.c.obj] Error 1
-mingw32-make.exe[1]: Leaving directory 'G:/Documents/Clionprojects/RaySim/cmake-build-debug/CMakeFiles/CMakeTmp'
-mingw32-make.exe: *** [Makefile:120: cmTC_e1058/fast] Error 2
+Run Build Command(s):C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe cmTC_e0c38/fast && C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f CMakeFiles\cmTC_e0c38.dir\build.make CMakeFiles/cmTC_e0c38.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/felix/Documents/RAYSIM/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e0c38.dir/CheckSymbolExists.c.obj
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe  @CMakeFiles/cmTC_e0c38.dir/includes_C.rsp  -o CMakeFiles\cmTC_e0c38.dir\CheckSymbolExists.c.obj   -c C:\Users\felix\Documents\RAYSIM\cmake-build-debug\CMakeFiles\CMakeTmp\CheckSymbolExists.c
+C:\Users\felix\Documents\RAYSIM\cmake-build-debug\CMakeFiles\CMakeTmp\CheckSymbolExists.c:2:10: fatal error: G://APPDATAIII//NVIDIA//CUDA//v102//include///CL/cl.h: No such file or directory
+ #include <G://APPDATAIII//NVIDIA//CUDA//v102//include///CL/cl.h>
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+mingw32-make.exe[1]: *** [CMakeFiles\cmTC_e0c38.dir\build.make:66: CMakeFiles/cmTC_e0c38.dir/CheckSymbolExists.c.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'C:/Users/felix/Documents/RAYSIM/cmake-build-debug/CMakeFiles/CMakeTmp'
+mingw32-make.exe: *** [Makefile:120: cmTC_e0c38/fast] Error 2
 
 
-File G:/Documents/Clionprojects/RaySim/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File C:/Users/felix/Documents/RAYSIM/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <G://APPDATAIII//NVIDIA//CUDA//v102//include///CL/cl.h>
 
@@ -96,4 +88,93 @@ int main(int argc, char** argv)
   return 0;
 #endif
 }
+Determining if the CL_VERSION_1_2 exist failed with the following output:
+Change Dir: C:/Users/felix/Documents/RAYSIM/cmake-build-debug/CMakeFiles/CMakeTmp
 
+Run Build Command(s):C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe cmTC_7c0a0/fast && C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f CMakeFiles\cmTC_7c0a0.dir\build.make CMakeFiles/cmTC_7c0a0.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/felix/Documents/RAYSIM/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7c0a0.dir/CheckSymbolExists.c.obj
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe  @CMakeFiles/cmTC_7c0a0.dir/includes_C.rsp  -o CMakeFiles\cmTC_7c0a0.dir\CheckSymbolExists.c.obj   -c C:\Users\felix\Documents\RAYSIM\cmake-build-debug\CMakeFiles\CMakeTmp\CheckSymbolExists.c
+C:\Users\felix\Documents\RAYSIM\cmake-build-debug\CMakeFiles\CMakeTmp\CheckSymbolExists.c:2:10: fatal error: G://APPDATAIII//NVIDIA//CUDA//v102//include///CL/cl.h: No such file or directory
+ #include <G://APPDATAIII//NVIDIA//CUDA//v102//include///CL/cl.h>
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+mingw32-make.exe[1]: *** [CMakeFiles\cmTC_7c0a0.dir\build.make:66: CMakeFiles/cmTC_7c0a0.dir/CheckSymbolExists.c.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'C:/Users/felix/Documents/RAYSIM/cmake-build-debug/CMakeFiles/CMakeTmp'
+mingw32-make.exe: *** [Makefile:120: cmTC_7c0a0/fast] Error 2
+
+
+File C:/Users/felix/Documents/RAYSIM/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <G://APPDATAIII//NVIDIA//CUDA//v102//include///CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_1_2
+  return ((int*)(&CL_VERSION_1_2))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the CL_VERSION_1_1 exist failed with the following output:
+Change Dir: C:/Users/felix/Documents/RAYSIM/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe cmTC_83e5a/fast && C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f CMakeFiles\cmTC_83e5a.dir\build.make CMakeFiles/cmTC_83e5a.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/felix/Documents/RAYSIM/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_83e5a.dir/CheckSymbolExists.c.obj
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe  @CMakeFiles/cmTC_83e5a.dir/includes_C.rsp  -o CMakeFiles\cmTC_83e5a.dir\CheckSymbolExists.c.obj   -c C:\Users\felix\Documents\RAYSIM\cmake-build-debug\CMakeFiles\CMakeTmp\CheckSymbolExists.c
+C:\Users\felix\Documents\RAYSIM\cmake-build-debug\CMakeFiles\CMakeTmp\CheckSymbolExists.c:2:10: fatal error: G://APPDATAIII//NVIDIA//CUDA//v102//include///CL/cl.h: No such file or directory
+ #include <G://APPDATAIII//NVIDIA//CUDA//v102//include///CL/cl.h>
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+mingw32-make.exe[1]: *** [CMakeFiles\cmTC_83e5a.dir\build.make:66: CMakeFiles/cmTC_83e5a.dir/CheckSymbolExists.c.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'C:/Users/felix/Documents/RAYSIM/cmake-build-debug/CMakeFiles/CMakeTmp'
+mingw32-make.exe: *** [Makefile:120: cmTC_83e5a/fast] Error 2
+
+
+File C:/Users/felix/Documents/RAYSIM/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <G://APPDATAIII//NVIDIA//CUDA//v102//include///CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_1_1
+  return ((int*)(&CL_VERSION_1_1))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the CL_VERSION_1_0 exist failed with the following output:
+Change Dir: C:/Users/felix/Documents/RAYSIM/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe cmTC_de0aa/fast && C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f CMakeFiles\cmTC_de0aa.dir\build.make CMakeFiles/cmTC_de0aa.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/felix/Documents/RAYSIM/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_de0aa.dir/CheckSymbolExists.c.obj
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe  @CMakeFiles/cmTC_de0aa.dir/includes_C.rsp  -o CMakeFiles\cmTC_de0aa.dir\CheckSymbolExists.c.obj   -c C:\Users\felix\Documents\RAYSIM\cmake-build-debug\CMakeFiles\CMakeTmp\CheckSymbolExists.c
+C:\Users\felix\Documents\RAYSIM\cmake-build-debug\CMakeFiles\CMakeTmp\CheckSymbolExists.c:2:10: fatal error: G://APPDATAIII//NVIDIA//CUDA//v102//include///CL/cl.h: No such file or directory
+ #include <G://APPDATAIII//NVIDIA//CUDA//v102//include///CL/cl.h>
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+mingw32-make.exe[1]: *** [CMakeFiles\cmTC_de0aa.dir\build.make:66: CMakeFiles/cmTC_de0aa.dir/CheckSymbolExists.c.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'C:/Users/felix/Documents/RAYSIM/cmake-build-debug/CMakeFiles/CMakeTmp'
+mingw32-make.exe: *** [Makefile:120: cmTC_de0aa/fast] Error 2
+
+
+File C:/Users/felix/Documents/RAYSIM/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <G://APPDATAIII//NVIDIA//CUDA//v102//include///CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_1_0
+  return ((int*)(&CL_VERSION_1_0))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
