@@ -143,6 +143,7 @@ typedef struct CL_Rayinfo{
     cl_float3 polarisation; //polarisation //normalised vector for now
     cl_float totaltravel;
     cl_uint faceseed;
+    cl_int lastface;
 
 }CL_Rayinfo ;
 typedef struct CL_Faceinfo{

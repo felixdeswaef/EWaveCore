@@ -87,7 +87,7 @@ void formatDefinitions::store(CL_Rayinfo * info, int count) {
         myfileout << info[i].S.x<<std::endl<< info[i].S.y<<std::endl<< info[i].S.z<<std::endl;
 
 
-        myfileout << info[i].D.x<<std::endl<< info[i].D.y<<std::endl<< info[i].D.z<<std::endl;
+        myfileout << info[i].S.x+info[i].D.x<<std::endl<< info[i].S.y+info[i].D.y<<std::endl<<  info[i].S.z+info[i].D.z<<std::endl;
 
 
         myfileout << info[i].polarisation.x<<std::endl<< info[i].polarisation.y<<std::endl<< info[i].polarisation.z<<std::endl;

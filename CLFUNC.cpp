@@ -109,9 +109,9 @@
         local_item_size[0] = 32;
         local_item_size[1] = 32;
 
-        antennaorigin.x = 4.0f;
-        antennaorigin.y = 1.0f;
-        antennaorigin.z = 4.0f;
+        antennaorigin.x = 2.5f;
+        antennaorigin.y = 2.5f;
+        antennaorigin.z = 2.5f;
         polarisation.x = 1.0f;
         polarisation.y = 0.0f;
         polarisation.z = 0.0f;
@@ -203,7 +203,7 @@
         if (err!=0||verbose)std::cout<<err<<"enq ray gen \n";
         err = clEnqueueReadBuffer(CTXT.commandQue, raysA, CL_TRUE, 0, raystacksize * sizeof(CL_Rayinfo), outstack, 0, NULL, &readoutcomplete);
 
-        for (int R = 0; R <3;R++){ //reflection cycle loops
+        for (int R = 0; R <2;R++){ //reflection cycle loops
             cl_mem Primary,Secondary;
             if (R%2==0){
                 Primary = raysA;
@@ -234,7 +234,7 @@
             global_item_size[1] = stacksize;
             err = clEnqueueNDRangeKernel(CTXT.commandQue,MAIN,2, nullptr, global_item_size, nullptr, 1, &gen,&col);
             if (err!=0||verbose)std::cout<<err<<"enq ray col \n";
-            err = clEnqueueReadBuffer(CTXT.commandQue, raysA, CL_TRUE, 0, raystacksize * sizeof(CL_Rayinfo), outstack, 0, NULL, &readoutcomplete);
+            err = clEnqueueReadBuffer(CTXT.commandQue, Primary, CL_TRUE, 0, raystacksize * sizeof(CL_Rayinfo), outstack, 0, NULL, &readoutcomplete);
 
 
             global_item_size[0] = raystacksize;
@@ -242,7 +242,7 @@
             err = clEnqueueNDRangeKernel(CTXT.commandQue,REFLECT,1, nullptr, global_item_size, nullptr, 1, &col,&finished);
             if (err!=0||verbose)std::cout<<err<<"end ray ref \n";
 
-            //err = clEnqueueReadBuffer(CTXT.commandQue, raysA, CL_TRUE, 0, raystacksize * sizeof(CL_Rayinfo), outstack, 0, NULL, &readoutcomplete);
+            err = clEnqueueReadBuffer(CTXT.commandQue, Primary, CL_TRUE, 0, raystacksize * sizeof(CL_Rayinfo), outstack, 0, NULL, &readoutcomplete);
 
 
             global_item_size[0] = raystacksize;
