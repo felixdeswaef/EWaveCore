@@ -136,7 +136,7 @@ for (int i = 0;i<facecount;i++){
 
     float curdist = Coliders[ray * facecount + i].w;
     //printf("distance %f face %d",curdist,i);
-    if (curdist<mindist &&curdist >= 0 && !( RAYS[ray].lastface==i)){//( RAYS[ray].lastface!=i)
+    if (curdist<mindist &&curdist >= 0 && !( RAYS[ray].lastface==i)){//( RAYS[ray].lastface!=i)     && !( RAYS[ray].lastface==i)
         //suplement with validity check
         //otherwise keep this result
         mindist = curdist;
@@ -157,8 +157,9 @@ float3 colpoint = Coliders[ray * facecount + face].xyz ;
 uint Hash = wang_hash(RAYS[ray].faceseed + faceinfo[face].faceseed);
 RAYSR[ray].D=reflected;
 RAYSR[ray].faceseed=Hash;
+RAYSR[ray].lastface=face;
 RAYSR[ray].S=colpoint;
-if (Coliders[ray * facecount + face].w>0){
+if (Coliders[ray * facecount + face].w>=0){
 RAYS[ray].D=colpoint- RAYS[ray].S;//Coliders[ray * facecount + face].xyz - RAYS[ray].S;
 } else{
 RAYS[ray].D=RAYS[ray].D/10;
