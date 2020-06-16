@@ -8,7 +8,7 @@ link_directories("G://Documents//Clionprojects//clprojtmpl - Copy//cmake-build-d
 include_directories("G://Documents//Clionprojects//clprojtmpl - Copy//")
 
 
-set(verbose 1)
+set(verbose 0)
 set(CMAKE_CXX_STANDARD 14)
 find_package(OpenCL REQUIRED)
 

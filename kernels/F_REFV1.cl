@@ -1,4 +1,4 @@
-#define debug1
+#define debug2
 #define cachecount 16
 typedef struct Rayinfo {
     float3 S; //source
@@ -6,6 +6,7 @@ typedef struct Rayinfo {
     float3 polarisation; //polarisation //normalised vector for now
     float totaltravel;
     uint faceseed;
+    int lastface;
 
 
 } Rayinfo;
@@ -24,6 +25,29 @@ float vecDet(float3 a, float3 b, float3 c) {
 
 
     return ((a.x * (b.y * c.z - c.y * b.z)) - (b.x * (a.y * c.z - c.y * a.z)) + (c.x * (a.y * b.z - b.y * a.z)));
+
+
+}
+float singleval(float3 a) {
+    float val = 0.0f;
+    if (fabs(a.x)>fabs(val)&&!isinf(a.x))
+    {
+        val = a.x;
+    }
+    if (fabs(a.y)>fabs(val)&&!isinf(a.y))
+    {
+        val = a.y;
+    }
+    if (fabs(a.z)>fabs(val)&&!isinf(a.z))
+    {
+        val = a.z;
+    }
+    if (fabs(val)==0.0f){
+        val = 0;
+        printf("NZFPDT");
+    }
+    //printf("\n find %f abs %f %d ",length(a),fabs(val) , (isnan(val)||false)?1:0 );
+    return val;
 
 
 }
@@ -112,7 +136,7 @@ for (int i = 0;i<facecount;i++){
 
     float curdist = Coliders[ray * facecount + i].w;
     //printf("distance %f face %d",curdist,i);
-    if (curdist<mindist && curdist> 0){
+    if (curdist<mindist &&curdist >= 0 && !( RAYS[ray].lastface==i)){//( RAYS[ray].lastface!=i)
         //suplement with validity check
         //otherwise keep this result
         mindist = curdist;
@@ -123,16 +147,22 @@ for (int i = 0;i<facecount;i++){
 #ifdef debug0
 printf("ray %d collided with %d at %f pos\n",ray,face,mindist);
 #endif
-printf("ray %d collided with %d at %f pos %f\n",ray,face,mindist,Coliders[ray * facecount + facecount].x);
+//printf("ray %d collided with %d at %f pos %f\n",ray,face,mindist,Coliders[ray * facecount + facecount].x);
 
 float3 incoming = RAYS[ray].D;
 float3 normal = faceinfo[face].normal;
 float3 reflected = incoming - 2 * dot(incoming, normal) * normal;
+float3 colpoint = Coliders[ray * facecount + face].xyz ;
+
 uint Hash = wang_hash(RAYS[ray].faceseed + faceinfo[face].faceseed);
 RAYSR[ray].D=reflected;
 RAYSR[ray].faceseed=Hash;
-RAYSR[ray].S=Coliders[ray * facecount + face].xyz - RAYS[ray].S;
-RAYS[ray].D=Coliders[ray * facecount + face].xyz - RAYS[ray].S;
+RAYSR[ray].S=colpoint;
+if (Coliders[ray * facecount + face].w>0){
+RAYS[ray].D=colpoint- RAYS[ray].S;//Coliders[ray * facecount + face].xyz - RAYS[ray].S;
+} else{
+RAYS[ray].D=RAYS[ray].D/10;
+}
 RAYSR[ray].polarisation = incoming - 2 * dot(incoming, normal) * normal;   //dirty formula see reflection chapter
 RAYSR[ray].totaltravel = Coliders[ray * facecount + face].w + RAYS[ray].totaltravel;
 
@@ -170,19 +200,34 @@ float3 rayvector = Rayin.D;
 float3 ABvector = (Bpoints[face]) - (Apoint);
 float3 ACvector = (Cpoints[face]) - (Apoint);
 
-float determinant = length((-1 * rayvector) * cross(ABvector, ACvector));
-printf("\ndet x %fy%f z%f ",((-1 * rayvector) * cross(ABvector, ACvector)).x,((-1 * rayvector) * cross(ABvector, ACvector)).y,((-1 * rayvector) * cross(ABvector, ACvector)).z );
+float determinant = dot((-1 * rayvector) , cross(ABvector, ACvector));
+//printf("\ndetr%df%d x %f y%f z%f ",ray,face,((-1 * rayvector) * cross(ABvector, ACvector)).x,((-1 * rayvector) * cross(ABvector, ACvector)).y,((-1 * rayvector) * cross(ABvector, ACvector)).z );
 
-float3 result = (float3)(0.0f, 0.0f, 0.0f);
+float3 result = (float3)(-2.0f, -2.0f, -2.0f);
 float rest, resu, resv; //todo also check inside plane
 float3 subcal = (rayorigin - Apoint);
+//float3 subcal = (Apoint-rayorigin);
+//printf("subcal x%f y%f z%f \n Apoint  x%f y%f z%f ",        subcal.x,subcal.y,subcal.z,        Apoint.x,Apoint.y,Apoint.z);
 float4 colres =(float4)(0.0f, 0.0f, 0.0f, -1.0f);
 if (determinant!=0) {   //ray crosses plane
 
-rest = length((cross(ABvector, ACvector) * subcal) / determinant);
-resu = length((cross(ABvector, rayvector) * subcal) / determinant);
-resv = length((cross(rayvector, ACvector) * subcal) / determinant);
+    //float3 ress = (1.0f/determinant)*((float3)((cross(ABvector, ACvector) * subcal),(cross(ABvector, rayvector) * subcal),(cross(rayvector, ACvector) * subcal)))
+float rest = (dot(cross(ABvector, ACvector) , subcal) / determinant);
+//rest = singleval(rests);
+float resu = (dot(cross(ABvector, rayvector) , subcal) / determinant);
+//resu = singleval(resus);
+float resv = (dot(cross(rayvector, ACvector) , subcal) / determinant);
 
+//resv = singleval(resvs);
+//printf("\n%d %d\ntts%f t %f %f %f \n u %f %f %f\n v %f %f %f\n",ray,face,(singleval(resus)),rests.x,rests.y,rests.z,resus.x,resus.y,resus.z,resvs.x,resvs.y,resvs.z);
+
+
+
+/*
+rest = ress.x;
+resu = ress.y;
+resv = ress.z;
+*/
 result = rayorigin + rayvector * rest;
 // we do care if its in range becauze it cant be behind the startpoit
 // also we need to scale our rays to be vallid
@@ -192,13 +237,15 @@ result = rayorigin + rayvector * rest;
 //bu if (rest.z<=1 && rest.z>=0.0f && resu.z<=1 && resu.z>=0.0f && resv.z<=1 && resv.z>=-0.0f && (resu.z+resv.z)<=1 ){
 if (rest<=1 && rest>=0.0f && resu<=1 && resu>=0.0f && resv<=1 && resv>=-0.0f && (resu+resv)<=1 ){
     colres = (float4)(result.x, result.y, result.z, distance(rayorigin, result));
-    printf("\n gocol ray%d face %d x%f y%f z%f",ray,face,result.x,result.y,result.z);
+    //printf("\n gocol ray%d face %d x%f y%f z%f",ray,face,result.x,result.y,result.z);
+//printf(" gocolp2 x ray%d face %d  R%f %f %f  A%f %f %f  B%f %f %f  C%f %f %f \n",ray,face, RAYS[ray].D.x,RAYS[ray].D.y,RAYS[ray].D.z,Apoints[face].x,Apoints[face].y,Apoints[face].z,Bpoints[face].x,Bpoints[face].y,Bpoints[face].z,Cpoints[face].x,Cpoints[face].y,Cpoints[face].z);
+
 }else{
 
     //colres = (float4)(2.0, 2.0, 2.0, -1.0f);
     //printf(" colcheck x ray%d face %d  R%f %f %f  A%f %f %f  B%f %f %f  C%f %f %f \n",ray,face, RAYS[ray].D.x,RAYS[ray].D.y,RAYS[ray].D.z,Apoints[face].x,Apoints[face].y,Apoints[face].z,Bpoints[face].x,Bpoints[face].y,Bpoints[face].z,Cpoints[face].x,Cpoints[face].y,Cpoints[face].z);
 
-//printf("\nout of bounds ´%d %d  t%du%dv%dT%d %f %f %f \n%f %f %f d %f",ray,face,(rest.z<=1 && rest.z>=-0.0f )?0:1, (resu.z<=1 && resu.z>=-0.0f )?0:1, (resv.z<=1 && resv.z>=(-0.0f) )?0:1,((rest.z<=1 && rest.z>=0.0f && resu.z<=1 && resu.z>=0.0f && resv.z<=1 && resv.z>=-0.0f && (resu.z+resv.z)<=1 )?0:1), rest.z,resu.z,resv.z,result.x, result.y, result.z, distance(rayorigin, result));
+//printf("\nout of bounds ´%d %d  t%du%dv%dT%d Tact %f Uact %f Vact %f \nresult pos %f %f %f distance %f",ray,face,(rest<=1 && rest>=-0.0f )?0:1, (resu<=1 && resu>=-0.0f )?0:1, (resv<=1 && resv>=(-0.0f) )?0:1,((rest<=1 && rest>=0.0f && resu<=1 && resu>=0.0f && resv<=1 && resv>=-0.0f && (resu+resv)<=1 )?0:1), rest,resu,resv,result.x, result.y, result.z, distance(rayorigin, result));
 }
 
 
@@ -400,10 +447,15 @@ float v = 0.5 * i;
 float theta = 2 * M_PI * v / golden;
  //TEMP CHANGE BECAUSE OF DISTRIBUTION ERROR
  */
-float arc = 2.0f* M_PI/n * i;///n * i;//M_PI*2.0f*1.0f;//0.5f * M_PI/n * i;
+///n * i;//M_PI*2.0f*1.0f;//0.5f * M_PI/n * i;
 //float ele = 0.125f * M_PI;
 //float ele = M_PI*(fmod(1.0f /(5) * i,1))+0.5*M_PI;
+//NORM
 float ele = M_PI*(fmod(1.0f /(n/sqrt(n*1.0f)) * i,1))+0.5*M_PI;
+float arc = 2.0f* M_PI/n * i;
+//OVERRIDE
+//float ele =1.0f*M_PI;
+//float arc =1.5f*M_PI;
 //float ele = ((1.0f * M_PI)/(n * i))+0.5*M_PI;
 
 float3 dir = (float3)(sin(arc)*fabs(cos(ele)), sin(ele), cos(arc)*fabs(cos(ele)));//fabs(cos(ele)));
@@ -411,13 +463,13 @@ float3 dir = (float3)(sin(arc)*fabs(cos(ele)), sin(ele), cos(arc)*fabs(cos(ele))
 //float3 dir = (float3)(cos(theta) * sin(phi), sin(theta) * sin(phi), cos(phi));
 //float3 dir = (float3)(cos(theta)* sin(phi), sin(phi)*1, sin(theta)*cos(phi));
 
-RAYS[ray].D = (dir * 1.0f);
-printf("len %f %f",length(dir),length(RAYS[ray].D));
+RAYS[ray].D = (dir * 10.0f);
+//printf("len %f %f",length(dir),length(RAYS[ray].D));
 RAYS[ray].S = (origin);
 RAYS[ray].faceseed = wang_hash(0);
 RAYS[ray].totaltravel = 0.0f;
 RAYS[ray].polarisation = polar;
-
+RAYS[ray].lastface = -2;
 //printf("heading,%f,%f,%f\n",RAYS[ray].D.x,RAYS[ray].D.y,RAYS[ray].D.z);
 
 }

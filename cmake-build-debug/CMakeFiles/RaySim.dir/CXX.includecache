@@ -42,10 +42,26 @@ G:/APPDATAIII/NVIDIA/CUDA/v102/include/vector_types.h
 crt/host_defines.h
 G:/APPDATAIII/NVIDIA/CUDA/v102/include/crt/host_defines.h
 
+G:/Documents/Clionprojects/RaySim/CLFUNC.cpp
+CLFUNC.h
+G:/Documents/Clionprojects/RaySim/CLFUNC.h
+envSpawn.h
+G:/Documents/Clionprojects/RaySim/envSpawn.h
+formatDefinitions.h
+G:/Documents/Clionprojects/RaySim/formatDefinitions.h
+
 G:/Documents/Clionprojects/RaySim/CLFUNC.h
 cmath
 -
 library.h
+-
+formatDefinitions.h
+G:/Documents/Clionprojects/RaySim/formatDefinitions.h
+
+G:/Documents/Clionprojects/RaySim/envSpawn.h
+
+G:/Documents/Clionprojects/RaySim/formatDefinitions.cpp
+cstdlib
 -
 formatDefinitions.h
 G:/Documents/Clionprojects/RaySim/formatDefinitions.h
@@ -73,6 +89,16 @@ CLFUNC.h
 G:/Documents/Clionprojects/RaySim/CLFUNC.h
 
 G:/Documents/Clionprojects/RaySim/main.h
+
+G:/Documents/Clionprojects/RaySim/raySpawn.cpp
+cstdlib
+-
+iostream
+-
+math.h
+-
+raySpawn.h
+G:/Documents/Clionprojects/RaySim/raySpawn.h
 
 G:/Documents/Clionprojects/RaySim/raySpawn.h
 formatDefinitions.h
