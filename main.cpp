@@ -4,9 +4,14 @@
 #include "CLFUNC.h"
 
 
-int main() {
-    std::cout << "Hello, World!" << std::endl;
-    initCL();
+int main(int argc, char *argv[] ) {
+
+    std::cout << "Hello, World! arc "<<argc <<argv[0] << std::endl;
+    if (argc > 1){
+        initCL(argv[1]);
+    } else {
+        initCL();
+    }
     //initGL();
     std::cout << "goodbye, World!" << std::endl;
     return 0;
@@ -21,5 +26,18 @@ void initCL(){
     //todo Watchdog kills kernel above n seconds kernel runtime
     clf.meminfRAY(raystacksize);
     RAY * Raystack;// = DebugSpawner(raystacksize ,1.1f,1.1f,1.1f,0.0f,10.0f,10.0f,0.0f);
-    clf.runcolisions(Raystack,raystacksize);
+    clf.runcolisions(raystacksize);
+}
+void initCL(char * path ){
+    CLFUNC clf = CLFUNC(false) ;
+
+    int raystacksize =clf.handleinputfile(path);
+    clf.path = path;
+    //clf.trymap(2.0f, sizeof(char)*10000000,1);
+    //todo Watchdog kills kernel above n seconds kernel runtime
+
+
+    clf.meminfRAY(raystacksize);
+
+    clf.runcolisions(raystacksize);
 }

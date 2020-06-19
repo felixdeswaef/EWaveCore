@@ -29,7 +29,7 @@
 
     }
 
-    void CLFUNC::runcolisions(RAY * raystack,int raystacksize) {
+    void CLFUNC::runcolisions(int raystacksize) {
 
         //CL_Rayinfo * nstack = convert(raystack,raystacksize);
 
@@ -203,7 +203,7 @@
         if (err!=0||verbose)std::cout<<err<<"enq ray gen \n";
         err = clEnqueueReadBuffer(CTXT.commandQue, raysA, CL_TRUE, 0, raystacksize * sizeof(CL_Rayinfo), outstack, 0, NULL, &readoutcomplete);
 
-        for (int R = 0; R <2;R++){ //reflection cycle loops
+        for (int R = 0; R <20;R++){ //reflection cycle loops
             cl_mem Primary,Secondary;
             if (R%2==0){
                 Primary = raysA;
@@ -317,7 +317,8 @@
 
 
 
-        formatDefinitions file = formatDefinitions(false,"cATA.SDAT");
+        formatDefinitions file = formatDefinitions(false,path);
+        cout<<"storing in"<<path;
         file.store(outstack,raystacksize);
 
         file.storeField(outfield,resd,resdc,steps);
@@ -326,9 +327,9 @@
         roomsize.y = Ysize;
         roomsize.z = Zsize;
 
-        testvolsize.x = resds;
-        testvolsize.y = resds;
-        testvolsize.z = resds;
+        testvolsize.x = resdsx;
+        testvolsize.y = resdsx;
+        testvolsize.z = resdsx;
 
         file.storemeta(roomsize,antennaorigin,testcubeorigin,testvolsize);
         file.close();
@@ -372,7 +373,7 @@ bool CLFUNC::trymap(float wdim,size_t maxsize,int phasesteps) {
         cout<<"\nacceptable parrameters for 3d map\n";
         cout<<"\nresultmap 3d size in MB "<<(resdc*resdc*resdc*celbytes*phasesteps)/1000000.0f;
         resd = 3;
-        resds = wdim;
+        resdsx = wdim;
 
     }
     else if (!((resdc*resdc*celbytes*phasesteps) > memsizealoc))
@@ -380,7 +381,7 @@ bool CLFUNC::trymap(float wdim,size_t maxsize,int phasesteps) {
         cout<<"\nacceptable parrameters for 2d map\n";
         cout<<"\nresultmap 2d size in MB "<<(resdc*resdc*celbytes*phasesteps)/1000000.0f;
         resd = 2;
-        resds = wdim;
+        resdsx = wdim;
 
     }
     else {
@@ -402,4 +403,26 @@ bool CLFUNC::meminfRAY(int rays) {
 
     cout<<"\nMax alloc usage by raystack :"<<(float)raystacksize/memsizealoc*100<<"%, raystack size:"<<raystacksize/1000000.0f<<"MB combined global usage "<<raystacksize*2.0f/globalsize*100.0f<<"\n";
     return true;
+}
+
+int CLFUNC::handleinputfile(char * path) {
+    cl_float3 roomsize,testvolsize;
+    string antpath ;
+    int rayc,steps;
+    strtrd(path,&antpath, &roomsize,&antennaorigin,&testcubeorigin,&testvolsize,&simhz,&rayc,&steps);
+
+
+    Xsize = roomsize.x;
+    Ysize = roomsize.y;
+    Zsize = roomsize.z;
+
+
+    resdsx = testvolsize.x ;
+    //resdsy = testvolsize.y ;
+    //resdsz = testvolsize.z ;
+
+    cout<<rayc << " : "<< simhz;
+    trymap(resdsx, sizeof(char)*10000000,steps);
+
+    return  rayc;
 }

@@ -48,7 +48,71 @@ float **tristackgen(float * verts, int skibef, int skiaft,int tricount) {
     return fltr;
 }
 
-formatDefinitions::formatDefinitions(bool rd,const char* filename) {
+int strtrd(std::string path, std::string *antpath, cl_float3 *rms,  cl_float3 *ant,cl_float3 *tvo, cl_float3 *tvs,
+        float *simhz, int *raystg, int * steps) {
+    ifstream myfilein;
+    std::string stbl = "RAYSIM_START_DATA_BLOCK";
+    std::string bldf = "SimPreloadV1";
+    myfilein.open(path,std::ofstream::in);
+    string val ;
+    float fval;
+    int ival;
+    myfilein >> val;
+    if (val != stbl) return 1;
+    while(!myfilein.eof()){
+        int count;
+        myfilein >> val;
+        if (val==bldf){
+            myfilein >> val;
+            *antpath = val;
+
+            myfilein >> fval;
+            rms->x = fval;
+            myfilein >> fval;
+            rms->y = fval;
+            myfilein >> fval;
+            rms->z = fval;
+
+            myfilein >> fval;
+            ant->x = fval;
+            myfilein >> fval;
+            ant->y  = fval;
+            myfilein >> fval;
+            ant->z  = fval;
+
+            myfilein >> fval;
+            tvo->x = fval;
+            myfilein >> fval;
+            tvo->y = fval;
+            myfilein >> fval;
+            tvo->z = fval;
+
+            myfilein >> fval;
+            tvs->x = fval;
+            myfilein >> fval;
+            tvs->y = fval;
+            myfilein >> fval;
+            tvs->z = fval;
+
+            myfilein >> fval;
+            *simhz = fval;
+
+            myfilein >> ival;
+            *raystg = ival;
+
+            myfilein >> ival;
+            *steps= ival;
+
+
+        }
+    }
+
+
+
+    return 0;
+}
+
+formatDefinitions::formatDefinitions(bool rd, char* filename) {
 
     READ = rd;
     if (READ) {

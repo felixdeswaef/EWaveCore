@@ -5,8 +5,9 @@
 #ifndef RAYSIM_MAIN_H
 #define RAYSIM_MAIN_H
 
-int main();
+int main(int argc, char *argv[] );
 void initCL();
+void initCL(char *);
 void initGL();
 
 

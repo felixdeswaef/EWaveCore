@@ -185,7 +185,7 @@ public:
 
 
 
-    formatDefinitions(bool read, const char *filename);
+    formatDefinitions(bool read,  char *filename);
     void store(CL_Rayinfo * , int);
     void storeField(float * field, int dims, int size,int steps);
     void storemeta(cl_float3 roomsize,cl_float3 antenaorigin,cl_float3 testvolorigin,cl_float3 testvolsize);
@@ -193,6 +193,27 @@ public:
     void close();
 
 };
+int strtrd(
+        std::string path,
 
+        std::string * antpath,
+
+        cl_float3 *rms,
+
+
+        cl_float3 *antx,
+
+
+        cl_float3 *tvox,
+
+
+        cl_float3 *tvsx,
+
+
+        float *simhz,
+        int *raystg,
+        int *steps
+
+) ;
 
 #endif //RAYSIM_FORMATDEFINITIONS_H

@@ -26,25 +26,33 @@ class CLFUNC {
     float Ysize = 5.0f;
     float Zsize = 5.0f;
 
-    float simhz = 26000000;
+    float simhz = 2600000;
     //float simhz = 2000000000;
 
     int resdc; //count per dimension
-    float resds; //size per dimension
+    float resdsx; //size per dimension
     float celsizeAct ;
     int resd; //dimensions
     int steps; //frames in time
     float angleofset; //angle ofset
+
     cl_float3 testcubeorigin,antennaorigin,polarisation ;
 
 
 
 public:
+    char * path = "ydat.SDAT";
     CLFUNC(bool = false);
 
     void setupAuto();
 
     void runcolisions(RAY *, int);
+
+    void runcolisions( int);
+
+    int handleinputfile(char *);
+
+
 
     bool trymap( float wdim, size_t maxsize,int phasesteps);
 
