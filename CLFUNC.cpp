@@ -203,7 +203,7 @@
         if (err!=0||verbose)std::cout<<err<<"enq ray gen \n";
         err = clEnqueueReadBuffer(CTXT.commandQue, raysA, CL_TRUE, 0, raystacksize * sizeof(CL_Rayinfo), outstack, 0, NULL, &readoutcomplete);
 
-        for (int R = 0; R <20;R++){ //reflection cycle loops
+        for (int R = 0; R <2;R++){ //reflection cycle loops
             cl_mem Primary,Secondary;
             if (R%2==0){
                 Primary = raysA;
@@ -319,7 +319,7 @@
 
         formatDefinitions file = formatDefinitions(false,path);
         cout<<"storing in"<<path;
-        file.store(outstack,raystacksize);
+        //file.store(outstack,raystacksize);
 
         file.storeField(outfield,resd,resdc,steps);
         cl_float3 roomsize,testvolsize;

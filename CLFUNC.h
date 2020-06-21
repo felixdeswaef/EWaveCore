@@ -26,7 +26,7 @@ class CLFUNC {
     float Ysize = 5.0f;
     float Zsize = 5.0f;
 
-    float simhz = 2600000;
+    float simhz = 90000000;
     //float simhz = 2000000000;
 
     int resdc; //count per dimension

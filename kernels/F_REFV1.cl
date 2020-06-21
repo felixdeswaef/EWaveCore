@@ -306,7 +306,8 @@ float dcel = sqrt(sizecel * sizecel + sizecel * sizecel + sizecel * sizecel);
 int count = 0;
 int count2 = 0;
 int count3 = 0;
-
+int frameofset = ((d<3)?subdivs*subdivs:subdivs*subdivs*subdivs);
+int offset = z*subdivs*subdivs*3 + y*subdivs*3 + x*3 ;
 
 //printf("|--  %d %d %d %d --|",d,x,y,z);
 
@@ -323,6 +324,9 @@ uint cache[cachecount];//cache of done cycles of hashes
 int cachec[cachecount]; //count in hash in case we double
 int cacheusage = 0;
 int count4 ;
+vectors[0*frameofset + offset + 0] =0.0f;//1.0f*x;//RAYS[closestid].polarisation.x + vectors[0*frameofset + offset + 0];
+vectors[0*frameofset + offset + 1] =0.0f;//1.0f*y;//RAYS[closestid].polarisation.y + vectors[0*frameofset + offset + 1];
+vectors[0*frameofset + offset + 2] =0.0f;// 1.0f*z;//RAYS[closestid].polarisation.z + vectors[0*frameofset + offset + 2];
 for(int i = 0;i<rayc;i++){ //loop
     count4= i;
     float3 origin = RAYS[i].S;
@@ -384,13 +388,16 @@ for(int i = 0;i<rayc;i++){ //loop
             //****ACTUAL RESULT ADDED TO RESULT ARRAY *****//
             //int cel = 0
             //vectors[(cel*((d<3)?subdivs*subdivs:subdivs*subdivs*subdivs*3)]
-            int frameofset = ((d<3)?subdivs*subdivs:subdivs*subdivs*subdivs);
-            int offset = z*subdivs*subdivs*3 + y*subdivs*3 + x*3 ;
-            //int offset = 0*subdivs*subdivs*3 + 0*subdivs*3 + 1*3 ;
-            vectors[0*frameofset + offset + 0] = 0;//RAYS[closestid].polarisation.x + vectors[0*frameofset + offset + 0];
-            vectors[0*frameofset + offset + 1] = 0;//RAYS[closestid].polarisation.y + vectors[0*frameofset + offset + 1];
-            vectors[0*frameofset + offset + 2] = 0*frameofset + offset*1.0f;//RAYS[closestid].polarisation.z + vectors[0*frameofset + offset + 2];
-            //****ACTUAL RESULT ADDED TO RESULT ARRAY *****//
+/* HEREE
+int frameofset = ((d<3)?subdivs*subdivs:subdivs*subdivs*subdivs);
+int offset = z*subdivs*subdivs*3 + y*subdivs*3 + x*3 ;
+//int offset = 0*subdivs*subdivs*3 + 0*subdivs*3 + 1*3 ;
+//HERE
+vectors[0*frameofset + offset + 0] = RAYS[closestid].polarisation.x + vectors[0*frameofset + offset + 0];
+vectors[0*frameofset + offset + 1] = y*10.0f;//RAYS[closestid].polarisation.y + vectors[0*frameofset + offset + 1];
+vectors[0*frameofset + offset + 2] = x*10.0f;//RAYS[closestid].polarisation.z + vectors[0*frameofset + offset + 2];
+//****ACTUAL RESULT ADDED TO RESULT ARRAY *****;//
+*/
             //printf("went trough %d samehash rays",hc);
             if (cacheusage<cachecount){
                 //printf("space left in cache");
