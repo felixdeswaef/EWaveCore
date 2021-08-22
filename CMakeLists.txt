@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.13)
-project(RaySim)
+project(EWaveCore)
 #SETTING opelCL library locations
 #set(OpenCL_INCLUDE_DIR "G://APPDATAIII//NVIDIA//CUDA//v102//include//")
 #set(OpenCL_LIBRARY "G://APPDATAIII//NVIDIA//CUDA//v102//lib//x64//OpenCL.lib")
@@ -32,9 +32,12 @@ set(CMAKE_CXX_STANDARD 14)
 find_package(OpenCL REQUIRED)
 
 # MAKE LIBRARY
-
+ADD_LIBRARY( EWaveCore STATIC
+        formatDefinitions.cpp formatDefinitions.h raySpawn.cpp raySpawn.h CLFUNC.cpp CLFUNC.h envSpawn.cpp envSpawn.h eWaveCore.h)
 
 # MAKE EXECUTABLE
-add_executable(RaySim main.cpp formatDefinitions.cpp formatDefinitions.h raySpawn.cpp raySpawn.h CLFUNC.cpp CLFUNC.h envSpawn.cpp envSpawn.h main.h)
-target_link_libraries(RaySim oclhelper) #LINK Helper library
-target_link_libraries(RaySim OpenCL::OpenCL) #LINK openCL library
+add_executable(EWaveCoreTest main.cpp main.h)
+
+target_link_libraries(EWaveCoreTest EWaveCore) #LINK Helper library
+target_link_libraries(EWaveCore oclhelper) #LINK Helper library
+target_link_libraries(EWaveCore OpenCL::OpenCL) #LINK openCL library

@@ -6,7 +6,7 @@
 
 int main(int argc, char *argv[] ) {
 
-    std::cout << "Hello, World! arc "<<argc <<argv[0] << std::endl;
+    std::cout << "Hello, World! arc "<<argc <<argv[1] << std::endl;
     if (argc > 1){
         initCL(argv[1]);
     } else {

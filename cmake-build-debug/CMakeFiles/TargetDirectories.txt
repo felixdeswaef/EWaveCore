@@ -1,3 +1,4 @@
-C:/Users/felix/Documents/RAYSIM/cmake-build-debug/CMakeFiles/RaySim.dir
+C:/Users/felix/Documents/RAYSIM/cmake-build-debug/CMakeFiles/EWaveCoreTest.dir
+C:/Users/felix/Documents/RAYSIM/cmake-build-debug/CMakeFiles/EWaveCore.dir
 C:/Users/felix/Documents/RAYSIM/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/felix/Documents/RAYSIM/cmake-build-debug/CMakeFiles/rebuild_cache.dir

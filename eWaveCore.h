@@ -1,12 +1,11 @@
 //
-// Created by felix on 14/02/2020.
+// Created by felix on 22/08/2021.
 //
 
-#ifndef RAYSIM_CLFUNC_H
-#define RAYSIM_CLFUNC_H
+#ifndef EWAVECORE_EWAVECORE_H
+#define EWAVECORE_EWAVECORE_H
 
-#include <cmath>
-#include <library.h> //oclhelper lib
+#include <library.h>
 #include "formatDefinitions.h"
 
 class CLFUNC {
@@ -31,33 +30,31 @@ class CLFUNC {
 
     int resdc; //count per dimension
     float resdsx; //size per dimension
-    float celsizeAct ;
+    float celsizeAct;
     int resd; //dimensions
     int steps; //frames in time
     float angleofset; //angle ofset
 
-    cl_float3 testcubeorigin,antennaorigin,polarisation ;
-
+    cl_float3 testcubeorigin, antennaorigin, polarisation;
 
 
 public:
-    char * path = "ydat.SDAT";
+    char *path = "ydat.SDAT";
+
     CLFUNC(bool = false);
 
     void setupAuto();
 
     void runcolisions(RAY *, int);
 
-    void runcolisions( int);
+    void runcolisions(int);
 
     int handleinputfile(char *);
 
 
-
-    bool trymap( float wdim, size_t maxsize,int phasesteps);
+    bool trymap(float wdim, size_t maxsize, int phasesteps);
 
     bool meminfRAY(int rays);
 };
 
-
-#endif //RAYSIM_CLFUNC_H
+#endif //EWAVECORE_EWAVECORE_H

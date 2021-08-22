@@ -1,6 +1,5 @@
 C:\Users\felix\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\201.7846.88\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\felix\Documents\RAYSIM
 bla C:/Users/felix/Documents/OpenCHell/cmake-build-debug/OCLHELPER C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.0
--- Found OpenCL: C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.0//lib//x64//OpenCL.lib  
 -- Configuring done
 -- Generating done
 -- Build files have been written to: C:/Users/felix/Documents/RAYSIM/cmake-build-debug

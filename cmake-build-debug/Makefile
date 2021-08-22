@@ -110,17 +110,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named RaySim
+# Target rules for targets named EWaveCoreTest
 
 # Build rule for target.
-RaySim: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 RaySim
-.PHONY : RaySim
+EWaveCoreTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 EWaveCoreTest
+.PHONY : EWaveCoreTest
 
 # fast build rule for target.
-RaySim/fast:
-	$(MAKE) -f CMakeFiles\RaySim.dir\build.make CMakeFiles/RaySim.dir/build
-.PHONY : RaySim/fast
+EWaveCoreTest/fast:
+	$(MAKE) -f CMakeFiles\EWaveCoreTest.dir\build.make CMakeFiles/EWaveCoreTest.dir/build
+.PHONY : EWaveCoreTest/fast
+
+#=============================================================================
+# Target rules for targets named EWaveCore
+
+# Build rule for target.
+EWaveCore: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 EWaveCore
+.PHONY : EWaveCore
+
+# fast build rule for target.
+EWaveCore/fast:
+	$(MAKE) -f CMakeFiles\EWaveCore.dir\build.make CMakeFiles/EWaveCore.dir/build
+.PHONY : EWaveCore/fast
 
 CLFUNC.obj: CLFUNC.cpp.obj
 
@@ -128,7 +141,7 @@ CLFUNC.obj: CLFUNC.cpp.obj
 
 # target to build an object file
 CLFUNC.cpp.obj:
-	$(MAKE) -f CMakeFiles\RaySim.dir\build.make CMakeFiles/RaySim.dir/CLFUNC.cpp.obj
+	$(MAKE) -f CMakeFiles\EWaveCore.dir\build.make CMakeFiles/EWaveCore.dir/CLFUNC.cpp.obj
 .PHONY : CLFUNC.cpp.obj
 
 CLFUNC.i: CLFUNC.cpp.i
@@ -137,7 +150,7 @@ CLFUNC.i: CLFUNC.cpp.i
 
 # target to preprocess a source file
 CLFUNC.cpp.i:
-	$(MAKE) -f CMakeFiles\RaySim.dir\build.make CMakeFiles/RaySim.dir/CLFUNC.cpp.i
+	$(MAKE) -f CMakeFiles\EWaveCore.dir\build.make CMakeFiles/EWaveCore.dir/CLFUNC.cpp.i
 .PHONY : CLFUNC.cpp.i
 
 CLFUNC.s: CLFUNC.cpp.s
@@ -146,7 +159,7 @@ CLFUNC.s: CLFUNC.cpp.s
 
 # target to generate assembly for a file
 CLFUNC.cpp.s:
-	$(MAKE) -f CMakeFiles\RaySim.dir\build.make CMakeFiles/RaySim.dir/CLFUNC.cpp.s
+	$(MAKE) -f CMakeFiles\EWaveCore.dir\build.make CMakeFiles/EWaveCore.dir/CLFUNC.cpp.s
 .PHONY : CLFUNC.cpp.s
 
 envSpawn.obj: envSpawn.cpp.obj
@@ -155,7 +168,7 @@ envSpawn.obj: envSpawn.cpp.obj
 
 # target to build an object file
 envSpawn.cpp.obj:
-	$(MAKE) -f CMakeFiles\RaySim.dir\build.make CMakeFiles/RaySim.dir/envSpawn.cpp.obj
+	$(MAKE) -f CMakeFiles\EWaveCore.dir\build.make CMakeFiles/EWaveCore.dir/envSpawn.cpp.obj
 .PHONY : envSpawn.cpp.obj
 
 envSpawn.i: envSpawn.cpp.i
@@ -164,7 +177,7 @@ envSpawn.i: envSpawn.cpp.i
 
 # target to preprocess a source file
 envSpawn.cpp.i:
-	$(MAKE) -f CMakeFiles\RaySim.dir\build.make CMakeFiles/RaySim.dir/envSpawn.cpp.i
+	$(MAKE) -f CMakeFiles\EWaveCore.dir\build.make CMakeFiles/EWaveCore.dir/envSpawn.cpp.i
 .PHONY : envSpawn.cpp.i
 
 envSpawn.s: envSpawn.cpp.s
@@ -173,7 +186,7 @@ envSpawn.s: envSpawn.cpp.s
 
 # target to generate assembly for a file
 envSpawn.cpp.s:
-	$(MAKE) -f CMakeFiles\RaySim.dir\build.make CMakeFiles/RaySim.dir/envSpawn.cpp.s
+	$(MAKE) -f CMakeFiles\EWaveCore.dir\build.make CMakeFiles/EWaveCore.dir/envSpawn.cpp.s
 .PHONY : envSpawn.cpp.s
 
 formatDefinitions.obj: formatDefinitions.cpp.obj
@@ -182,7 +195,7 @@ formatDefinitions.obj: formatDefinitions.cpp.obj
 
 # target to build an object file
 formatDefinitions.cpp.obj:
-	$(MAKE) -f CMakeFiles\RaySim.dir\build.make CMakeFiles/RaySim.dir/formatDefinitions.cpp.obj
+	$(MAKE) -f CMakeFiles\EWaveCore.dir\build.make CMakeFiles/EWaveCore.dir/formatDefinitions.cpp.obj
 .PHONY : formatDefinitions.cpp.obj
 
 formatDefinitions.i: formatDefinitions.cpp.i
@@ -191,7 +204,7 @@ formatDefinitions.i: formatDefinitions.cpp.i
 
 # target to preprocess a source file
 formatDefinitions.cpp.i:
-	$(MAKE) -f CMakeFiles\RaySim.dir\build.make CMakeFiles/RaySim.dir/formatDefinitions.cpp.i
+	$(MAKE) -f CMakeFiles\EWaveCore.dir\build.make CMakeFiles/EWaveCore.dir/formatDefinitions.cpp.i
 .PHONY : formatDefinitions.cpp.i
 
 formatDefinitions.s: formatDefinitions.cpp.s
@@ -200,7 +213,7 @@ formatDefinitions.s: formatDefinitions.cpp.s
 
 # target to generate assembly for a file
 formatDefinitions.cpp.s:
-	$(MAKE) -f CMakeFiles\RaySim.dir\build.make CMakeFiles/RaySim.dir/formatDefinitions.cpp.s
+	$(MAKE) -f CMakeFiles\EWaveCore.dir\build.make CMakeFiles/EWaveCore.dir/formatDefinitions.cpp.s
 .PHONY : formatDefinitions.cpp.s
 
 main.obj: main.cpp.obj
@@ -209,7 +222,7 @@ main.obj: main.cpp.obj
 
 # target to build an object file
 main.cpp.obj:
-	$(MAKE) -f CMakeFiles\RaySim.dir\build.make CMakeFiles/RaySim.dir/main.cpp.obj
+	$(MAKE) -f CMakeFiles\EWaveCoreTest.dir\build.make CMakeFiles/EWaveCoreTest.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -218,7 +231,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles\RaySim.dir\build.make CMakeFiles/RaySim.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles\EWaveCoreTest.dir\build.make CMakeFiles/EWaveCoreTest.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -227,7 +240,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles\RaySim.dir\build.make CMakeFiles/RaySim.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles\EWaveCoreTest.dir\build.make CMakeFiles/EWaveCoreTest.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 raySpawn.obj: raySpawn.cpp.obj
@@ -236,7 +249,7 @@ raySpawn.obj: raySpawn.cpp.obj
 
 # target to build an object file
 raySpawn.cpp.obj:
-	$(MAKE) -f CMakeFiles\RaySim.dir\build.make CMakeFiles/RaySim.dir/raySpawn.cpp.obj
+	$(MAKE) -f CMakeFiles\EWaveCore.dir\build.make CMakeFiles/EWaveCore.dir/raySpawn.cpp.obj
 .PHONY : raySpawn.cpp.obj
 
 raySpawn.i: raySpawn.cpp.i
@@ -245,7 +258,7 @@ raySpawn.i: raySpawn.cpp.i
 
 # target to preprocess a source file
 raySpawn.cpp.i:
-	$(MAKE) -f CMakeFiles\RaySim.dir\build.make CMakeFiles/RaySim.dir/raySpawn.cpp.i
+	$(MAKE) -f CMakeFiles\EWaveCore.dir\build.make CMakeFiles/EWaveCore.dir/raySpawn.cpp.i
 .PHONY : raySpawn.cpp.i
 
 raySpawn.s: raySpawn.cpp.s
@@ -254,7 +267,7 @@ raySpawn.s: raySpawn.cpp.s
 
 # target to generate assembly for a file
 raySpawn.cpp.s:
-	$(MAKE) -f CMakeFiles\RaySim.dir\build.make CMakeFiles/RaySim.dir/raySpawn.cpp.s
+	$(MAKE) -f CMakeFiles\EWaveCore.dir\build.make CMakeFiles/EWaveCore.dir/raySpawn.cpp.s
 .PHONY : raySpawn.cpp.s
 
 # Help Target
@@ -263,7 +276,8 @@ help:
 	@echo ... all (the default if no target is provided)
 	@echo ... clean
 	@echo ... depend
-	@echo ... RaySim
+	@echo ... EWaveCoreTest
+	@echo ... EWaveCore
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... CLFUNC.obj

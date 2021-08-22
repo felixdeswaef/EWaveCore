@@ -52,7 +52,8 @@ CMAKE_BINARY_DIR = C:\Users\felix\Documents\RAYSIM\cmake-build-debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/RaySim.dir/all
+all: CMakeFiles/EWaveCoreTest.dir/all
+all: CMakeFiles/EWaveCore.dir/all
 
 .PHONY : all
 
@@ -62,36 +63,64 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/RaySim.dir/clean
+clean: CMakeFiles/EWaveCoreTest.dir/clean
+clean: CMakeFiles/EWaveCore.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/RaySim.dir
+# Target rules for target CMakeFiles/EWaveCoreTest.dir
 
 # All Build rule for target.
-CMakeFiles/RaySim.dir/all:
-	$(MAKE) -f CMakeFiles\RaySim.dir\build.make CMakeFiles/RaySim.dir/depend
-	$(MAKE) -f CMakeFiles\RaySim.dir\build.make CMakeFiles/RaySim.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\felix\Documents\RAYSIM\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6 "Built target RaySim"
-.PHONY : CMakeFiles/RaySim.dir/all
+CMakeFiles/EWaveCoreTest.dir/all: CMakeFiles/EWaveCore.dir/all
+	$(MAKE) -f CMakeFiles\EWaveCoreTest.dir\build.make CMakeFiles/EWaveCoreTest.dir/depend
+	$(MAKE) -f CMakeFiles\EWaveCoreTest.dir\build.make CMakeFiles/EWaveCoreTest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\felix\Documents\RAYSIM\cmake-build-debug\CMakeFiles --progress-num=6,7 "Built target EWaveCoreTest"
+.PHONY : CMakeFiles/EWaveCoreTest.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/RaySim.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\felix\Documents\RAYSIM\cmake-build-debug\CMakeFiles 6
-	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/RaySim.dir/all
+CMakeFiles/EWaveCoreTest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\felix\Documents\RAYSIM\cmake-build-debug\CMakeFiles 7
+	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/EWaveCoreTest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\felix\Documents\RAYSIM\cmake-build-debug\CMakeFiles 0
-.PHONY : CMakeFiles/RaySim.dir/rule
+.PHONY : CMakeFiles/EWaveCoreTest.dir/rule
 
 # Convenience name for target.
-RaySim: CMakeFiles/RaySim.dir/rule
+EWaveCoreTest: CMakeFiles/EWaveCoreTest.dir/rule
 
-.PHONY : RaySim
+.PHONY : EWaveCoreTest
 
 # clean rule for target.
-CMakeFiles/RaySim.dir/clean:
-	$(MAKE) -f CMakeFiles\RaySim.dir\build.make CMakeFiles/RaySim.dir/clean
-.PHONY : CMakeFiles/RaySim.dir/clean
+CMakeFiles/EWaveCoreTest.dir/clean:
+	$(MAKE) -f CMakeFiles\EWaveCoreTest.dir\build.make CMakeFiles/EWaveCoreTest.dir/clean
+.PHONY : CMakeFiles/EWaveCoreTest.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/EWaveCore.dir
+
+# All Build rule for target.
+CMakeFiles/EWaveCore.dir/all:
+	$(MAKE) -f CMakeFiles\EWaveCore.dir\build.make CMakeFiles/EWaveCore.dir/depend
+	$(MAKE) -f CMakeFiles\EWaveCore.dir\build.make CMakeFiles/EWaveCore.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\felix\Documents\RAYSIM\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5 "Built target EWaveCore"
+.PHONY : CMakeFiles/EWaveCore.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/EWaveCore.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\felix\Documents\RAYSIM\cmake-build-debug\CMakeFiles 5
+	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/EWaveCore.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\felix\Documents\RAYSIM\cmake-build-debug\CMakeFiles 0
+.PHONY : CMakeFiles/EWaveCore.dir/rule
+
+# Convenience name for target.
+EWaveCore: CMakeFiles/EWaveCore.dir/rule
+
+.PHONY : EWaveCore
+
+# clean rule for target.
+CMakeFiles/EWaveCore.dir/clean:
+	$(MAKE) -f CMakeFiles\EWaveCore.dir\build.make CMakeFiles/EWaveCore.dir/clean
+.PHONY : CMakeFiles/EWaveCore.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
